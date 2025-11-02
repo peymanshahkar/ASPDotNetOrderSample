@@ -1,0 +1,105 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Mobile.master.cs" Inherits="TabletOrder.Site_Mobile" %>
+
+<%@ Register Src="~/ViewSwitcher.ascx" TagPrefix="friendlyUrls" TagName="ViewSwitcher" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta name="viewport" content="width=device-width" />
+    <title><%: Page.Title %> - سفارش گیر گارسون آرشان</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <script src="<%= ResolveUrl("~/Scripts/WebForms/MSAjax/MicrosoftAjax.js")%>"></script>
+    <script src="<%= ResolveUrl("~/Scripts/WebForms/MSAjax/MicrosoftAjaxApplicationServices.js")%>"></script>
+    <script src="<%= ResolveUrl("~/Scripts/WebForms/MSAjax/MicrosoftAjaxWebForms.js")%>"></script>
+    <link href="<%= ResolveUrl("~/Content/bootstrap.rtl.css")%>" rel="stylesheet" />
+    <link href="<%= ResolveUrl("~/Content/bootstrap-utilities.rtl.css")%>" rel="stylesheet" />
+    <link href="<%= ResolveUrl("~/Content/bootstrap-reboot.rtl.css")%>" rel="stylesheet" />
+    <link href="<%= ResolveUrl("~/Content/bootstrap-grid.rtl.css")%>" rel="stylesheet" />
+    <script src="<%= ResolveUrl("~/Scripts/bootstrap.js")%>"></script>
+    <script src="<%= ResolveUrl("~/Scripts/bootstrap.bundle.js")%>"></script>
+
+    <script src="<%= ResolveUrl("~/Scripts/jquery-3.7.0.min.js")%>"></script>
+    <link href="<%= ResolveUrl("~/Content/font-awesome.min.css")%>" rel="stylesheet" />
+    <script src="<%= ResolveUrl("~/Scripts/modernizr-2.8.3.js")%>"></script>
+    <link href="<%= ResolveUrl("~/Content/Site.css")%>" rel="stylesheet" />
+<%--    <script src="<%= ResolveUrl("~/Scripts/bootstrap.esm.min.js")%>"></script>--%>
+
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+</head>
+<body>
+
+
+
+    <form id="form1" runat="server">
+
+        <div class="header">
+            <div class="logo">
+                <h2>سفارش گیر گارسون آرشان</h2>
+            </div>
+           <uc:Menu runat="server" ID="MainMenu" />
+        </div>
+
+        <div class="container">
+            <h1>سفارش گیری آرشان</h1>
+            <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+            <section class="content-wrapper main-content clear-fix">
+                <asp:ContentPlaceHolder runat="server" ID="ContentPlaceHolder1" />
+            </section>
+            <%-- <%<friendlyUrls:ViewSwitcher runat="server" />%>--%>
+        </div>
+
+
+
+        <!-- پاپ آپ برای نمایش خطا -->
+        <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="errorModalLabel">خطا</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <span id="errorMessage"></span>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">بستن</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <footer>
+            <p>&copy; <%: DateTime.Now.Year %> - نرم افزار سفارش گیر گارسون آرشان</p>
+        </footer>
+
+        <script>
+            $(document).ready(function () {
+                $('#hClose').on('click', function () {
+                    $('#errorModal').modal('hide');
+                });
+
+                $('#fClose').on('click', function () {
+                    $('#errorModal').modal('hide');
+                });
+            });
+
+        </script>
+
+        <script type="text/javascript">
+            function showError(message, title) {
+                $('#errorMessage').text(message); // قرار دادن پیام خطا در پاپ آپ
+                $('#errorModalLabel').text(title); //عنوان پیغام
+                $('#errorModal').modal('show'); // نمایش پاپ آپ
+            }
+        </script>
+
+
+    </form>
+</body>
+</html>
