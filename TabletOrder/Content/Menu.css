@@ -1,0 +1,56 @@
+﻿
+
+.food-list {
+/*    max-height: 500px;
+*/    overflow-y: auto;
+    width:100%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px ;
+}
+
+.food-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+
+}
+
+.food-item.highlight {
+    background-color: #ffeb3b; /* رنگ زرد برای تمایز ردیف‌ها */
+}
+
+.food-item h5 {
+    margin: 0;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+}
+
+    .quantity-controls button {
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        border-radius: 5px;
+        margin: 0 5px;
+        cursor:pointer;
+    }
+
+    .quantity-controls label {
+        margin: 0 10px;
+    }
+
+
+.food-item:hover
+{
+    background-color:#2b57b0;
+}

@@ -1,0 +1,233 @@
+﻿/* Move down content because we have a fixed navbar that is 50px tall */
+
+@font-face {
+    font-family: 'BYekan';
+    src: url('../fonts/BYEKAN.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/BYEKAN.eot') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/BYEKAN.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/BYEKAN.woff') format('woff'), /* Modern Browsers */
+         url('../Fonts/BYEKAN.TTF')  format('truetype'); /* Safari, Android, iOS */
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'BYekan', Arial, sans-serif;
+}
+
+
+body {
+    font-family: 'B Yekan', 'Arial Narrow', Arial, sans-serif, sans-serif;
+    direction: rtl;
+   
+    padding-bottom: 20px;
+}
+div{
+    font-family: 'B Yekan', 'Arial Narrow', Arial, sans-serif, sans-serif;
+}
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        margin-top: 20px;
+    }
+
+    .body-content {
+        padding: 0;
+    }
+}
+
+
+/* POP UP*/
+
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.close-btn {
+    background: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+/**************/
+
+
+/*Update Progress*/
+.overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+           
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /*display: none;*/ /* پیش‌فرض: مخفی */
+        }
+        .spinner {
+        /*    border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;*/
+           /* animation: spin 1s linear infinite;*/
+        }
+      /*  @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }*/
+/********/
+
+
+
+.header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header .logo h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    text-align: center;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    display: inline;
+    padding: 10px 20px;
+}
+
+.navbar li a {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+.navbar li a:hover {
+    background-color: #111;
+}
+
+
+
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom:50px;
+}
+
+    .form-group label {
+        width: 30%;
+        text-align: right;
+    }
+
+    .form-group input {
+        width: 65%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+
+
+
+.invoice-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+    .invoice-item h5 {
+        margin: 0 0 10px 0;
+    }
+
+    .invoice-item p {
+        margin: 0;
+    }
+
+.repeater-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.invoice-item {
+    flex: 1 1 calc(50% - 10px); /* تنظیم ستون‌ها */
+    box-sizing: border-box;
+}
+
+/*
+footer{
+    background-color:#333;
+    padding:10px;
+    text-align:center;
+    color:#fff;
+}*/
+
+footer {
+    background-color: #333;
+    text-align: center;
+    color: #fff;
+    left: 0;
+    bottom: 0;
+    width: 100% ;
+    padding:10px;
+
+    position:fixed;
+}
